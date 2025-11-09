@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlgoBot</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <style>
+      @keyframes gradient-x {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .animate-gradient-x {
+        animation: gradient-x 6s ease infinite;
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+
+.loader {
+    animation: rotate 1s infinite;
+    height: 50px;
+    width: 50px;
+  }
+
+  .loader:before,
+  .loader:after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+  .loader:before {
+    animation: ball1 1s infinite;
+    background-color: #fff;
+    box-shadow: 30px 0 0 #ff3d00;
+    margin-bottom: 10px;
+  }
+  .loader:after {
+    animation: ball2 1s infinite;
+    background-color: #ff3d00;
+    box-shadow: 30px 0 0 #fff;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg) scale(0.8) }
+    50% { transform: rotate(360deg) scale(1.2) }
+    100% { transform: rotate(720deg) scale(0.8) }
+  }
+
+  @keyframes ball1 {
+    0% {
+      box-shadow: 30px 0 0 #ff3d00;
+    }
+    50% {
+      box-shadow: 0 0 0 #ff3d00;
+      margin-bottom: 0;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #ff3d00;
+      margin-bottom: 10px;
+    }
+  }
+
+  @keyframes ball2 {
+    0% {
+      box-shadow: 30px 0 0 #fff;
+    }
+    50% {
+      box-shadow: 0 0 0 #fff;
+      margin-top: -20px;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #fff;
+      margin-top: 0;
+    }
+  }
+  
+  
+
+
+
+    </style>
+  </head>
+  <body class="bg-[#0B132B]">
+    <div
+      class="lg:h-[75px] h-[65px] bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#38BDF8] bg-[length:200%_200%] animate-gradient-x sticky top-0 flex justify-start items-center px-2 lg:px-5"
+    >
+      <img src="image.png" alt="logo" class="h-full" />
+      <h1 class="lg:text-4xl text-2xl font-bold text-gray-200">AlgoBot</h1>
+    </div>
+
+    <div class="h-auto pb-20" id="chatsec">
+      <div class="flex lg:p-5 p-3 ">
+        <div
+          class="bg-[#1E293B] lg:p-4 p-3 rounded-t-2xl rounded-br-2xl flex items-center gap-3 max-w-10/12"
+        >
+          <i class="ri-robot-2-line text-2xl text-[#E2E8F0]"></i>
+          <h1 class="lg:text-xl text-md font-semibold text-[#E2E8F0]">
+            How Can I Help You?
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="lg:h-[85px] h-[75px] bg-blue-500 fixed w-full bottom-0 flex items-center lg:px-10 px-2 lg:gap-4 gap-2 border-t-2 border-gray-500"
+    >
+      <textarea
+        id="message"
+        placeholder="Ask Your Question?"
+        class="flex-1 focus-within:border-orange-500 bg-[#1E293B] border border-2 lg:border-3 border-black text-[#E2E8F0] p-2 placeholder:text-xl placeholder:text-[#94A3B8] h-8/12 placeholder:font-semibold focus:outline-none rounded-lg overflow-y-scroll no-scrollbar"
+      ></textarea>
+      <button
+        class="font-bold p-3  rounded-lg bg-yellow-400 text-[#111827] hover:bg-orange-500 hover:text-gray-100"
+        id="send"
+      >
+        <i class="fa-solid fa-paper-plane text-2xl"></i>
+      </button>
+    </div>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
